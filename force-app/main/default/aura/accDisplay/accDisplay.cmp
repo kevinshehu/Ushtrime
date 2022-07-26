@@ -1,0 +1,35 @@
+<aura:component implements = 'flexipage:availableForRecordHome, flexipage:availableForAllPageTypes, force:hasRecordId'>
+    <aura:attribute name="record" type="object" />
+    <aura:attribute name="accountRecord" type="object" />
+    <aura:attribute name="recordSaveError" type="String" default=""/>
+
+    <force:recordData aura:id="record"
+        fields="Name,Industry,Description,Phone"
+        recordId="{!v.recordId}"
+        targetRecord="{!v.record}"
+        targetFields="{!v.accountRecord}"
+        targetError="{!v.recordSaveError}"
+        mode="VIEW"
+    />
+
+    <lightning:card  title="{!v.accountRecord.Name}">
+        <div class="slds-p-horizontal--small">
+            <p class="slds-text-heading--small">
+                <lightning:formattedText title="Industry" value="{!v.accountRecord.Industry}" />
+            </p>
+
+            <p class="slds-text-heading--small">
+                 <lightning:formattedText title="Description" value="{!v.accountRecord.Description}" />
+            </p>
+
+            <p class="slds-text-heading--small">
+                <lightning:formattedPhone title="Phone" value="{!v.accountRecord.Phone}" />
+            </p>
+        </div>
+    </lightning:card>
+
+    <aura:if isTrue="{!not(empty(v.recordSaveError))}">
+        <div class="recordSaveError">
+            {!v.recordSaveError}</div>
+    </aura:if>
+</aura:component>

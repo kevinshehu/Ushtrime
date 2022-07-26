@@ -1,0 +1,9 @@
+<apex:page standardController="Case" recordSetVar="cases">
+    <apex:pageBlock title="My Cases">
+        <apex:pageBlockTable value="{!cases}" var="item">
+            <apex:column value="{!item.CaseNumber}"></apex:column>
+            <apex:column value="{!item.Origin}"></apex:column>
+            <apex:column value="{!item.Reason}"></apex:column>
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+</apex:page>

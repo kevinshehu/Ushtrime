@@ -1,0 +1,10 @@
+<apex:page >
+    <div style="text-align:center; font-size:2em">
+        <h1>
+            RENDERED SUCCESSFULLY!
+            <br/> END OF PAGE
+            <br/> Another test...
+            <br/> From {!$User.FirstName} {!$User.LastName}
+        </h1>
+    </div>
+</apex:page>

@@ -1,0 +1,9 @@
+<aura:component>
+    <force:recordData aura:id="forceRecordDataCmp"
+    recordId="{!v.recordId}"
+    layoutType="{!v.layout}"
+    targetRecord="{!v.record}"
+    targetFields="{!v.simpleRecord}"
+    targetError="{!v.error}"
+    recordUpdated="{!c.recordUpdated}" />
+</aura:component>	
